@@ -19,19 +19,19 @@ sudo apt-fast upgrade -y
 sudo apt-fast install ubuntu-restricted-extras celluloid ffmpeg synaptic htop gparted gnome-tweaks gnome-tweak-tool -y
 
 # Use Brave instead of Firefox 
-sudo apt-fast install apt-transport-https curl
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt-fast update
-sudo apt-fast install brave-browser -y
-sudo apt purge firefox -yy
-sudo apt purge firefox-locale-en -yy
-if [ -d "/home/$USER/.mozilla" ]; then
-    rm -rf /home/$USER/.mozilla
-fi
-if [ -d "/home/$USER/.cache/mozilla" ]; then
-    rm -rf /home/$USER/.cache/mozilla
-fi
+# sudo apt-fast install apt-transport-https curl
+# curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+# echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+# sudo apt-fast update
+# sudo apt-fast install brave-browser -y
+# sudo apt purge firefox -yy
+# sudo apt purge firefox-locale-en -yy
+# if [ -d "/home/$USER/.mozilla" ]; then
+#     rm -rf /home/$USER/.mozilla
+# fi
+# if [ -d "/home/$USER/.cache/mozilla" ]; then
+#     rm -rf /home/$USER/.cache/mozilla
+# fi
 
 
 # -----------------------
@@ -96,7 +96,7 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-fast update
-sudo apt-fast install apt-transport-https code -y
+sudo apt-fast install apt-transport-https curl code -y
 
 # Make things pretty
 echo "Installing Papirus icon set"
