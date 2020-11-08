@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Disclaimer
-echo "If  using this script willy-nilly breaks your stuff, future-me or anyone else, past-me is not responsible." $'\n'$" At this time, this script is not meant to be interactive, but just quickly automate the usual tasks. Check before executing."
+echo "If using this script willy-nilly breaks your stuff, future-me or anyone else, past-me is not responsible." $'\n'$" At this time, this script is not meant to be interactive, but just quickly automate the usual tasks. Check before executing."
 
 # Basics
 echo "Installing apt-fast to speed up future package downloads"
@@ -89,6 +89,10 @@ sudo chmod +x cproton.sh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-fast update && sudo apt-fast install spotify-client -y
+
+## Install Figma
+sudo add-apt-repository ppa:chrdevs/figma -y
+sudo apt-fast install figma-linux -y
 
 ## Install Git and VS Code
 sudo apt-fast install git -y
