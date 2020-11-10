@@ -16,7 +16,7 @@ echo "Update installed packages to make avoid conflicts and skip later downloads
 sudo apt-fast upgrade -y
 
 # Install extras for sensible usage
-sudo apt-fast install ubuntu-restricted-extras celluloid ffmpeg synaptic htop gparted gnome-tweaks gnome-tweak-tool -y
+sudo apt-fast install ubuntu-restricted-extras celluloid ffmpeg synaptic htop gparted gnome-tweaks gnome-tweak-tool apt-transport-https curl -y
 
 # Use Brave instead of Firefox 
 # sudo apt-fast install apt-transport-https curl
@@ -60,7 +60,7 @@ sudo sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
 
 # --- Enable fail2ban
 sudo apt-fast install fail2ban
-sudo cp fail2ban.local /etc/fail2ban/
+# sudo cp fail2ban.local /etc/fail2ban/
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 
@@ -100,7 +100,7 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-fast update
-sudo apt-fast install apt-transport-https curl code -y
+sudo apt-fast install code -y
 
 # Make things pretty
 echo "Installing Papirus icon set"
@@ -108,9 +108,9 @@ sudo add-apt-repository ppa:papirus/papirus -y
 sudo apt-fast install papirus-icon-theme
 
 # Install Inter typeface
-wget https://github.com/rsms/inter/releases/download/v3.15/Inter-3.15.zip
+wget https://github.com/rsms/inter/releases/download/v3.15/Inter-3.15.zip -P /Downloads
 cd Downloads
-unzip Inter-3.15.zip
+unzip Inter-3.15.zip -d "Inter-3.15"
 sudo cp "Inter-3.15/Inter Desktop/*" /user/share/fonts/opentype/inter
 rm -rf /Inter-3.15
 cd ../
