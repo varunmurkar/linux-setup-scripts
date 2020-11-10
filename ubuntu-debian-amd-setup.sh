@@ -108,8 +108,8 @@ sudo add-apt-repository ppa:papirus/papirus -y
 sudo apt-fast install papirus-icon-theme
 
 # Install Inter typeface
-wget https://github.com/rsms/inter/releases/download/v3.15/Inter-3.15.zip -P /Downloads
-cd Downloads
+wget https://github.com/rsms/inter/releases/download/v3.15/Inter-3.15.zip -P ~/Downloads/
+cd Downloads/
 unzip Inter-3.15.zip -d "Inter-3.15"
 sudo cp "Inter-3.15/Inter Desktop/*" /user/share/fonts/opentype/inter
 rm -rf /Inter-3.15
