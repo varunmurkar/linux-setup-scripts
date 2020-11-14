@@ -102,6 +102,10 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.micr
 sudo apt-fast update
 sudo apt-fast install code -y
 
+## Install Node.js LTS
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 # Make things pretty
 echo "Installing Papirus icon set"
 sudo add-apt-repository ppa:papirus/papirus -y
