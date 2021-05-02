@@ -27,7 +27,7 @@ sudo dnf install kmod-wl
 # sudo reboot
 
 # Install extras for sensible usage
-sudo dhf install zsh wget dnf-plugins-core celluloid ffmpeg htop apt-transport-https curl gnome-tweak-tool gnome-extensions-app gnome-shell-extension-appindicator -y
+sudo dhf install zsh wget dnf-plugins-core celluloid ffmpeg htop apt-transport-https curl gnome-tweak-tool gnome-extensions-app gnome-shell-extension-appindicator gimp timeshift -y
 zsh
 chsh -s $(which zsh)
 
@@ -45,9 +45,16 @@ sudo systemctl enable tlp && sudo tlp start
 # Enable Flathub for Flatpak
 $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo flatpak update
 
-# Install OBS
-flatpak install flathub com.obsproject.Studio
+# Install OBS, Todoist, Obsidian 
+flatpak install flathub com.obsproject.Studio com.todoist.Todoist md.obsidian.Obsidian
 
+# Install Mailspring
+# Download latest .rpm from https://getmailspring.com/download
+cd ~/Downloads
+sudo dnf install mailspring-*.x86_64.rpm -y
+
+# Install Telegram
+sudo dnf install telegram-desktop
 
 # Install Development Tools
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
