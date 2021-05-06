@@ -27,9 +27,11 @@ sudo dnf install kmod-wl
 # sudo reboot
 
 # Install extras for sensible usage
-sudo dhf install zsh wget dnf-plugins-core celluloid ffmpeg htop apt-transport-https curl gnome-tweak-tool gnome-extensions-app gnome-shell-extension-appindicator gimp timeshift -y
+sudo dnf install zsh wget dnf-plugins-core celluloid ffmpeg htop apt-transport-https curl gnome-tweak-tool gnome-extensions-app gnome-shell-extension-appindicator gimp timeshift -y
 zsh
 chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
 # Install additional multimedia codecs
 # sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
